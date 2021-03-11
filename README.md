@@ -1,6 +1,34 @@
 # VoxCraft
 An expanded version of my unreleased voxel game/engine. This code was thrown together, so I'm not very proud of it (e.g. world serialisation via SQL is a horrible way of doing things).
 
+## Building on Linux
+You use linux, your smart. Figure it out.
+
+## Building on Mac
+```bash
+# Make sure you have XCode (bleh) dev tools installed. If your not sure, or don't have them, run:
+sudo xcode-select --install
+
+# Make sure you have brew installed. If not:
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Then get cmake, make, git, etc....
+brew install cmake make git glm glfw sqlite
+
+# Then clone
+cd ~/Downloads
+git clone https://github.com/IsaccBarker/VoxCraft.git
+cd VoxCraft
+mkdir build
+cd build
+cmake ..
+make
+cd ../
+
+# Then run to run the app
+./build/VoxCraft
+```
+
 ## Built With
 * [GLEW](http://glew.sourceforge.net/) - For modern OpenGL methods
 * [GLFW](http://www.glfw.org/) - Window creation and management
