@@ -64,7 +64,9 @@ void GameMenu::MainMenu()
 			state_ = MenuState::Settings;
 		if(ImGui::Button("Quit", s_buttonSize))
 			is_quit_ = true;
-	}
+
+        ImGui::Text("\n\nVoxCraft is a simple Minecraft clone. This project was made over the course a month in 2019,\nwith some extra stuff added during the Capstone project period.\n\nTo interact, use standard video game controls (W - forward, D - right, A - left, S - backwards). Press f to toggle flying, u to toggle the debug menu, and esc to bring up the menu.\n\nThis is not my finest code. It's dirty. Nothing is optimised. Frustum culling isn't even a thing!\n\nPlease note that I did not draw the assets myself, those were taken from another Minecraft Clone, CubeCraft2.\n\nThe UI (not opengl) code is also heavilly borrowed (I still coded some myself, but it's trivial and takes to long to do by hand :-)\n\nThis project was a quick something to throw together (as it was based on an already existing project of mine), because my actual capstone project (Minecraft clone in Rust + GFX-HAL, with heavy GPU vulkan compute acceleration)\nwas may too ambisios for two weeks. That porject is still in developement at github.com/IsaccBarker/ferox.");
+    }
 	EndCenterWindow();
 }
 

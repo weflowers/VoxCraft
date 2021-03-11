@@ -83,9 +83,15 @@ void ChunkLoadingInfo::Process()
 					result_[ind] = Blocks::Grass;
 				else if(y >= heights[ind2_2d] - heights[ind2_2d] / 70)
 					result_[ind] = Blocks::Dirt;
-				else
-					result_[ind] = Blocks::Stone;
-			}
+				else {
+                    // Light up the caves a bit
+					if (y % 5 == 1 && x % 5 == 1) {
+                        result_[ind] = Blocks::Glowstone;
+                        continue;
+                    }
+                    result_[ind] = Blocks::Stone;
+                }
+            }
 	}
 
 	//tree generation
@@ -107,7 +113,7 @@ void ChunkLoadingInfo::Process()
 				int xMin = std::max(x-2, 0);
 				int xMax = std::min(x+2, CHUNK_SIZE-1);
 				int zMin = std::max(z-2, 0);
-				int zMax = std::min(z+3, CHUNK_SIZE-1);
+				int zMax = std::min(z+2, CHUNK_SIZE-1);
 				for(int _z = zMin; _z <= zMax; ++_z)
 					for(int _x = xMin; _x <= xMax; ++_x)
 					{
@@ -121,8 +127,13 @@ void ChunkLoadingInfo::Process()
 
             if(x >= 0 && x < CHUNK_SIZE && z >= 0 && z < CHUNK_SIZE)
 			{
-				for(int h = heights[i] + 1; h <= heights[i] + treeHeight; ++h)
-					result_[XYZ(x, h, z)] = Blocks::Wood;
+				for(int h = heights[i] + 1; h <= heights[i] + treeHeight; ++h) {
+				    if (!(h <= heights[i]+treeHeight-1)) {
+                        result_[XYZ(x, h, z)] = Blocks::Leaves;
+                        continue;
+                    }
+                    result_[XYZ(x, h, z)] = Blocks::Wood;
+                }
 				result_[XYZ(x, heights[i], z)] = Blocks::Dirt;
 			}
 		}

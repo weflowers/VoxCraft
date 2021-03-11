@@ -4,7 +4,7 @@
 #include "Resource.hpp"
 #include "UI.hpp"
 
-Application::Application() : width_(720), height_(480), in_game_(false)
+Application::Application() : width_(4000/3), height_(3000/3), in_game_(false)
 {
 	InitWindow();
 }
