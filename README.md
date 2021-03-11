@@ -1,11 +1,6 @@
 # VoxCraft
 An expanded version of my unreleased voxel game/engine. This code was thrown together, so I'm not very proud of it (e.g. world serialisation via SQL is a horrible way of doing things).
 
-## Screenshots
-![alt text](https://raw.githubusercontent.com/AdamYuan/CubeCraft2/master/screenshots/1.png)
-![alt text](https://raw.githubusercontent.com/AdamYuan/CubeCraft2/master/screenshots/2.png)
-![alt text](https://raw.githubusercontent.com/AdamYuan/CubeCraft2/master/screenshots/3.png)
-
 ## Built With
 * [GLEW](http://glew.sourceforge.net/) - For modern OpenGL methods
 * [GLFW](http://www.glfw.org/) - Window creation and management
